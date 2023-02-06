@@ -12,7 +12,7 @@ class EquSolver(object):
     super().__init__()
     self.parallelize = n_cpu
     self.block_dim = block_size
-    ti.init(arch=getattr(ti, backend.split("-")[-1]))
+    ti.init(arch=ti.gpu)
     self.N = 0
     self.fb: ti.FieldsBuilder
     self.fbst: ti._snode.snode_tree.SNodeTree
@@ -121,7 +121,7 @@ class GridSolver(object):
     self.grid_y = grid_y
     self.parallelize = n_cpu
     self.block_dim = block_size
-    ti.init(arch=getattr(ti, backend.split("-")[-1]))
+    ti.init(arch=ti.gpu)
     self.fb: ti.FieldsBuilder
     self.fbst: ti._snode.snode_tree.SNodeTree
     self.terr = ti.field(ti.f32, (3,))
