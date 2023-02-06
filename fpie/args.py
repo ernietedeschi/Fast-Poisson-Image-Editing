@@ -35,7 +35,7 @@ def get_args(gen_type: str) -> argparse.Namespace:
     "-z",
     "--block-size",
     type=int,
-    default=1024,
+    default=64,
     help="cuda block size (only for equ solver)",
   )
   parser.add_argument(
