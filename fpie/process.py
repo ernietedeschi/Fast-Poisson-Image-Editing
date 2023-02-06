@@ -8,7 +8,7 @@ from fpie import np_solver
 
 CPU_COUNT = os.cpu_count() or 1
 DEFAULT_BACKEND = "taichi-gpu"
-ALL_BACKEND = ["taichi-gpu"]
+ALL_BACKEND = ["numpy"]
 
 try:
   from fpie import numba_solver
@@ -19,7 +19,7 @@ except ImportError:
 
 try:
   from fpie import taichi_solver
-  ALL_BACKEND += ["taichi-cpu", "taichi-gpu"]
+  ALL_BACKEND += ["taichi-gpu"]
   DEFAULT_BACKEND = "taichi-gpu"
 except ImportError:
   taichi_solver = None  # type: ignore
