@@ -126,7 +126,7 @@ class EquProcessor(BaseProcessor):
     backend: str = DEFAULT_BACKEND,
     n_cpu: int = CPU_COUNT,
     min_interval: int = 100,
-    block_size: int = 64,
+    block_size: int = 1024,
   ):
     core: Optional[Any] = None
     rank = 0
@@ -256,7 +256,7 @@ class GridProcessor(BaseProcessor):
     backend: str = DEFAULT_BACKEND,
     n_cpu: int = CPU_COUNT,
     min_interval: int = 100,
-    block_size: int = 64,
+    block_size: int = 1024,
     grid_x: int = 8,
     grid_y: int = 8,
   ):
